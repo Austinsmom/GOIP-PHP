@@ -29,9 +29,9 @@ $ php send.php <phone number> <message>
 ................................................................... \n");
 }
 
-require_once './models/message.php';
-require_once './classes/goip.php';
-$settings = require 'settings.php';
+require_once dirname(__FILE__).'/models/message.php';
+require_once dirname(__FILE__).'/classes/goip.php';
+$settings = require dirname(__FILE__).'/settings.php';
 
 $message = new FSG\MessageVO(rand(1000, 9999), $argv[1], $argv[2]);
 
