@@ -1,6 +1,6 @@
 <?php
 /*
- * Usage: pass parameters through line command like example above
+ * Usage: pass parameters through line command like example below
  * example:
  *    php send.php 0121212123 "Hello World!"
  * @parameters receiver message

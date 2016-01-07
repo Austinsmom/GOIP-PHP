@@ -1,7 +1,7 @@
 # About
 
-This small PHP program sends SMS messages to a GOIP GSM Gateway. The messages 
-are received through a simple restful API.
+This small PHP program sends SMS messages using a GOIP GSM Gateway. The messages
+are received through line command.
 
 This is a standalone code snippet from a larger software project.
 
@@ -10,35 +10,28 @@ most likely the GOIP manufacturer.
 
 # System requirements
 - A GOIP SMS Gateway
-- Web server with PHP support (for example Apache and PHP 5.6)
+- Server with PHP > 5.4 working
 - CLI access for the keepalive.php (not mandatory)
 
 # Installation
 
-1. Copy the project to a web server that has IP access to the GOIP
-2. Adjust GOIP's SMS server settings (see screenshot in /doc)
+1. Copy the project to a server that has IP access to the GOIP
+2. Adjust GOIP's SMS settings (see screenshot in /doc)
 3. Run keepalive.php to catch the port number (see screenshot in /doc)
 4. Rename settings_dist.php as settings.php
 5. Fill the blanks in settings.php
-6. Start sending SMS messages through the API
+6. Start sending SMS messages through the line command
 
 # Usage
 
 ## Sending messages
 
-To send an SMS message, send JSON data as HTTP POST to the send.php
+To send an SMS message, call the script like example below:
 
-Example message as the content of POST https://server.example/send.php:
 ```
-{
-    "receiver": "0121212123",
-    "message": "Hello World!"
-}
+ $ php send.php 0121212123 "Hello World!"
 ```
 
-You may also set "id": 1234 (where 1234 is a unique ID) if you want to avoid 
-collisions with multiple simultaneous sendings. Read more from the GOIP 
-documentation about $sendid in chapter 3.
 
 ## GOIP keep alive
 
