@@ -91,7 +91,7 @@ class Goip {
             if(substr($buffer, 0, (3 + strlen($message->getId()))) === "OK " . $message->getId()) {
                 return true;
             } else if(substr($buffer, 0, (6 + strlen($message->getId()))) === "ERROR " . $message->getId()) {
-                return "Error in SubmitNumberStatus: " . $buffer . " - maybe the phone number is incorrect";
+                return "Error in SubmitNumberStatus: " . $buffer;
             } 
             sleep(1);
         }

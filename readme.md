@@ -32,6 +32,27 @@ To send an SMS message, call the script like example below:
  $ php send.php 0121212123 "Hello World!"
 ```
 
+## Answers
+
+If everything OK, the script will return "1". Example:
+```
+ $ php send.php 0121212123 "Hello World!"
+ 1
+ $
+```
+
+But, if something wrong happend (like incorrect phone number), the GOIP will return 
+the error and the script will pass the error to tty. The error message print the step 
+with problem. Example with a incorrect number:
+```
+ $ php send.php 0123 "Hello World!"
+ Error in SubmitNumberStatus: ERROR 8622 1 errorstatus:38
+ $
+```
+When the script submitted the number, the GOIP returned "ERROR 8622 1 errorstatus:38". 
+The message "Error in SubmitNumberStatus" was inserted at the moment correct: when the script
+push the number and the GOIP return with an error.
+
 
 ## GOIP keep alive
 
